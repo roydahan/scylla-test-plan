@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list of tests in scylla-dtest</title>
+</head>
+<body>
+<style>
+    div {
+        margin: 0px 0px 0px 70px;
+        background-color: transparent;
+    }
+
+    summary {
+        text-indent: 30px;
+    }
+</style>
+
+<details>
+    <summary>batch_test.TestBatch</summary>
+       <div>counter_batch_accepts_counter_mutations_test</div>
+       <div>counter_batch_rejects_regular_mutations_test</div>
+       <div>logged_batch_rejects_counter_mutations_test</div>
+       <div>unlogged_batch_rejects_counter_mutations_test</div>
+</details>
+<details>
+    <summary>compaction_test.TestCompaction_with_DateTieredCompactionStrategy</summary>
+       <div>sstable_deletion_test</div>
+</details>
+<details>
+    <summary>compaction_test.TestCompaction_with_LeveledCompactionStrategy</summary>
+       <div>sstable_deletion_test</div>
+</details>
+<details>
+    <summary>compaction_test.TestCompaction_with_SizeTieredCompactionStrategy</summary>
+       <div>sstable_deletion_test</div>
+</details>
+<details>
+    <summary>consistency_test.TestAccuracy</summary>
+       <div>test_network_topology_strategy_counters</div>
+       <div>test_simple_strategy_counters</div>
+</details>
+<details>
+    <summary>counter_tests.TestCounters</summary>
+       <div>counter_consistency_test</div>
+       <div>multi_counter_update_test</div>
+       <div>simple_increment_test</div>
+       <div>upgrade_test</div>
+       <div>validate_empty_column_name_test</div>
+</details>
+<details>
+    <summary>cql_additional_tests.TestCQL</summary>
+       <div>collection_counter_test</div>
+       <div>counters_test</div>
+       <div>reserved_keyword_test</div>
+       <div>validate_counter_regular_test</div>
+</details>
+<details>
+    <summary>cql_tests.MiscellaneousCQLTester</summary>
+       <div>cql3_insert_thrift_test</div>
+       <div>rename_test</div>
+</details>
+<details>
+    <summary>cql_tests.StorageProxyCQLTester</summary>
+       <div>type_test</div>
+</details>
+<details>
+    <summary>cql_tracing_test.TestCqlTracing</summary>
+       <div>tracing_startup_test</div>
+</details>
+<details>
+    <summary>repair_additional_test.RepairAdditionalTest</summary>
+       <div>repair_option_seq_test</div>
+</details>
+<details>
+    <summary>sstableloader_test.TestMigration_with_2_2_x</summary>
+       <div>migrate_sstable_to_check_consistency_test</div>
+       <div>migrate_sstable_with_cell_tombstone_test</div>
+       <div>migrate_sstable_with_collection_list_test</div>
+       <div>migrate_sstable_with_collection_map_test</div>
+       <div>migrate_sstable_with_collection_set_test</div>
+       <div>migrate_sstable_with_compact_storage_test</div>
+       <div>migrate_sstable_with_expired_ttl_test</div>
+       <div>migrate_sstable_with_frozen_collection_map_test</div>
+       <div>migrate_sstable_with_lz4_compression_test</div>
+       <div>migrate_sstable_with_overlapping_tombstones_test</div>
+       <div>migrate_sstable_with_range_tombstone_test</div>
+       <div>migrate_sstable_with_row_tombstone_test</div>
+       <div>migrate_sstable_with_static_cell_test</div>
+       <div>migrate_sstable_with_user_defined_types_test</div>
+       <div>migrate_sstable_with_wide_row_test</div>
+       <div>migrate_sstable_without_compression_test</div>
+</details>
+<details>
+    <summary>sstableloader_test.TestMigration_with_3_0_x</summary>
+       <div>migrate_sstable_to_check_consistency_test</div>
+       <div>migrate_sstable_with_cell_tombstone_test</div>
+       <div>migrate_sstable_with_collection_list_test</div>
+       <div>migrate_sstable_with_collection_map_test</div>
+       <div>migrate_sstable_with_collection_set_test</div>
+       <div>migrate_sstable_with_compact_storage_test</div>
+       <div>migrate_sstable_with_expired_ttl_test</div>
+       <div>migrate_sstable_with_frozen_collection_map_test</div>
+       <div>migrate_sstable_with_lz4_compression_test</div>
+       <div>migrate_sstable_with_overlapping_tombstones_test</div>
+       <div>migrate_sstable_with_range_tombstone_test</div>
+       <div>migrate_sstable_with_row_tombstone_test</div>
+       <div>migrate_sstable_with_static_cell_test</div>
+       <div>migrate_sstable_with_user_defined_types_test</div>
+       <div>migrate_sstable_with_wide_row_test</div>
+       <div>migrate_sstable_without_compression_test</div>
+</details>
+<details>
+    <summary>thrift_tests.TestMutations</summary>
+       <div>test_counter_get_slice_range</div>
+       <div>test_incr_decr_standard_add</div>
+       <div>test_incr_decr_standard_batch_add</div>
+       <div>test_incr_decr_standard_batch_remove</div>
+       <div>test_incr_decr_standard_muliget_slice</div>
+       <div>test_incr_decr_standard_remove</div>
+       <div>test_incr_decr_standard_slice</div>
+       <div>test_incr_standard_remove</div>
+</details>
+<details>
+    <summary>thrift_tests.TestWrappingRangeQueries</summary>
+       <div>test_wrapping_ranges</div>
+</details>
+<details>
+    <summary>user_types_test.TestUserTypes</summary>
+       <div>test_type_keyspace_permission_isolation</div>
+</details>
+</body>
+</html>
