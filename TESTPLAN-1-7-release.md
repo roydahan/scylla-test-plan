@@ -10,57 +10,57 @@ Platforms Support - Scylla Artifacts Tests{#label_2_Platforms_support}
 -----------------------------------------------------------------------
 - - -
 
-### &nbsp;&nbsp; Installation {#label_2_Installation} ###
+###  Installation {#label_2_Installation} ###
 
 |Platform|Tested on Versions     |Test Coverage|
 |:------:|:---------------------:|:------------|
 | Ubuntu | 14.04\n 16.04\n       |scylla-artifacts.py:ScyllaArtifactSanity.test_after_install\n scylla-artifacts.py:ScyllaArtifactSanity.test_after_stop_start\n scylla-artifacts.py:ScyllaArtifactSanity.test_after_restart|
 | Centos | 7.2\n 7.3\n           |scylla-artifacts.py:ScyllaArtifactSanity.test_after_install\n scylla-artifacts.py:ScyllaArtifactSanity.test_after_stop_start\n scylla-artifacts.py:ScyllaArtifactSanity.test_after_restart|
 
-&nbsp;
 
-### &nbsp;&nbsp; New Support {#label_2_New_Support} ###
+
+###  New Support {#label_2_New_Support} ###
 
 |Platform|Tested on Versions     |Test Coverage|
 |:------:|:---------------------:|:------------|
 | Debian | 8.6\n 8.7\n          |scylla-artifacts.py:ScyllaArtifactSanity.test_after_install\n scylla-artifacts.py:ScyllaArtifactSanity.test_after_stop_start\n scylla-artifacts.py:ScyllaArtifactSanity.test_after_restart|
 
-&nbsp;
 
-### &nbsp;&nbsp; Upgrade & Rollback {#label_2_upgrade} ###
+
+###  Upgrade & Rollback {#label_2_upgrade} ###
 
 |Platform     |Test Coverage|
 |:-----------:|:------------|
 | Ubuntu      | Manually -  |
 | Centos      | Manually -  | 
 
-&nbsp;
 
-### &nbsp;&nbsp; Auto Deployment {#label_2_Deployment} ###
+
+###  Auto Deployment {#label_2_Deployment} ###
 
 |Platform     |Test Coverage|
 |:-----------:|:------------|
 | AWS         |scylla-artifacts.py:ScyllaArtifactSanity.test_after_install\n scylla-artifacts.py:ScyllaArtifactSanity.test_after_stop_start\n scylla-artifacts.py:ScyllaArtifactSanity.test_after_restart|
 
-&nbsp;
+
 
 - - -
 Functional - Scylla dtest {#label_2_functional}
 -------------------------------------
 - - -
 
-### &nbsp;&nbsp; Progression {#label_2_Progression} ###
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **New Functionality in v1.7:**
+###  Progression {#label_2_Progression} ###
+ **New Functionality in v1.7:**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \subpage counters-feature 
+ \subpage counters-feature 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Other Tests Added in v1.7:**
+ **Other Tests Added in v1.7:**
 
 \htmlinclude 1-7-diff-tests.html
 
 
-### &nbsp;&nbsp; Regression {#label_2_Regression} ###
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **List of supported functionality that are part of previously released versions:** 
+###  Regression {#label_2_Regression} ###
+ **List of supported functionality that are part of previously released versions:** 
 
 \htmlinclude 1-7-all-tests.html
 
@@ -68,7 +68,7 @@ Functional - Scylla dtest {#label_2_functional}
 **Tests Documentation**
 \subpage dtest-table
 
-&nbsp;&nbsp;
+
 
 - - -
 Stability - Scylla Cluster Tests {#label_2_Stability}
@@ -88,8 +88,8 @@ ChaosMonkey framework is being used for cluster disruptions.
 | ChaosMonkey  | CorruptThenRebuildMonkey | sdcm.nemesis.Nemesis.disrupt_destroy_data_then_rebuild     |
 | ChaosMonkey  | DecommissionMonkey       | sdcm.nemesis.Nemesis.disrupt_nodetool_decommission         |
 
-&nbsp;
-&nbsp;
+
+
 
 #### Tests Scenarios  ####
 
@@ -99,14 +99,14 @@ ChaosMonkey framework is being used for cluster disruptions.
 | Longevity               | 7 days       | n_db_nodes: 6 - i2.4xlarge\n  n_loaders: 1 - c3.large\n | write\n 1 keyspace\n cl=QUORUM\n replication_factor=3\n mode cql3 native\n rate threads=1000\n pop seq=1..10000000\n |Type: ChaosMonkey\n Monkeys: All\n Interval: 5 mins\n | aws-longevity.yaml        |
 | Longevity-1TB           | 7 days       | n_db_nodes: 4 - i2.4xlarge\n  n_loaders: 1 - c3.large\n | write\n 1 keyspace\n cl=QUORUM\n replication_factor=3\n mode cql3 native\n rate threads=20\n col 'size=FIXED(1000) n=FIXED(1)'\n -pop seq=1..1250000000\n |Type: ChaosMonkey\n Monkeys: All\n Interval: 15 mins\n | aws-longevity-1TB.yaml   |
   
-&nbsp;&nbsp;
+
 
 - - -
 Performance {#label_2_Performance}
 ---------------------------------
 - - -
 
-#### &nbsp;&nbsp; Throughput ####
+####  Throughput ####
 **Single Schema Regression Tests**
     
 | Test Name               |Test Duration | Scylla Cluster Configuration                            | Test Workload Parameters                                                                                            | Nemesis |  Test Configuration File       |
@@ -115,7 +115,7 @@ Performance {#label_2_Performance}
 | Read-only workload      | 50 mins      | n_db_nodes: 3 - i2.2xlarge\n  n_loaders: 4 - c4.large\n | write\n pop seq=1..30000000\n \n **read**\n rate threads=100\n pop 'dist=gauss(1..30000000,15000000,1500000)'\n     | None    | aws-perf-mixed-regression.yaml |
 | Mixed workload          | 7 days       | n_db_nodes: 3 - i2.2xlarge\n  n_loaders: 4 - c4.large\n | write\n pop seq=1..30000000\n \n **mixed**\n rate threads=100\n pop 'dist=gauss(1..30000000,15000000,1500000)'\n    | None    | aws-perf-mixed-regression.yaml |
 
-&nbsp;&nbsp;
+
     
 - - -
 3rd Party Support & Integrations {#label_2_3rd_party_support}

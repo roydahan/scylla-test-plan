@@ -25,7 +25,7 @@ Platforms Support - Scylla Artifacts Tests {#label_Platforms_support}
 ---------------------------------------------------
 - - -
 
-### &nbsp;&nbsp; Installation {#label_Installation} ###
+###  Installation {#label_Installation} ###
 
 |Platform|Supported Versions     |Test Coverage|
 |:------:|:---------------------:|:------------|
@@ -34,9 +34,9 @@ Platforms Support - Scylla Artifacts Tests {#label_Platforms_support}
 | RHEL   | 7                     |    None     |
 | Debian | 8.6, 8.7              |scylla-artifacts.py:ScyllaArtifactSanity.test_after_install\n scylla-artifacts.py:ScyllaArtifactSanity.test_after_stop_start\n scylla-artifacts.py:ScyllaArtifactSanity.test_after_restart|
 
-&nbsp;
 
-### &nbsp;&nbsp; Auto Deployment {#label_Deployment} ###
+
+###  Auto Deployment {#label_Deployment} ###
 
 |Platform     |Test Coverage|
 |:-----------:|:------------|
@@ -44,9 +44,9 @@ Platforms Support - Scylla Artifacts Tests {#label_Platforms_support}
 | GCE         |    None     |
 | OpenStack   |    None     |
 
-&nbsp;
 
-### &nbsp;&nbsp; Upgrade & Rollback {#label_1_upgrade} ###
+
+###  Upgrade & Rollback {#label_1_upgrade} ###
 
 |Platform     |Test Coverage|
 |:-----------:|:------------|
@@ -55,28 +55,26 @@ Platforms Support - Scylla Artifacts Tests {#label_Platforms_support}
 | RHEL        | Manually - https://github.com/scylladb/scylla-docs/blob/master/upgrade/upgrade-guide-from-1.5-to-1.6-rpm.rst    |    
 | Debian      | None        |
 
-&nbsp;
+
 
 - - -
 Functional - Scylla dtest {#label_functional}
 -------------------------------------
 - - -
-### &nbsp;&nbsp; All Functional Tests in "master" {#label_Mater} ###
+###  All Functional Tests in "master" {#label_Mater} ###
 
 \htmlinclude all_master_tests.html
 
 \n
 
-&nbsp;&nbsp;&nbsp;&nbsp; **Tests Documentation**
+ **Tests Documentation**
 \subpage dtest-table
 
-\n
 
-### &nbsp;&nbsp; Jepsen {#label_Jepsen} ###
+###  Jepsen {#label_Jepsen} ###
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TBD
+TBD
 
-&nbsp;&nbsp;
 
 - - -
 Stability - Scylla Cluster Tests {#label_Stability}
@@ -96,8 +94,8 @@ ChaosMonkey framework is being used for cluster disruptions.
 | ChaosMonkey  | CorruptThenRebuildMonkey | sdcm.nemesis.Nemesis.disrupt_destroy_data_then_rebuild     |
 | ChaosMonkey  | DecommissionMonkey       | sdcm.nemesis.Nemesis.disrupt_nodetool_decommission         |
 
-&nbsp;
-&nbsp;
+
+
 
 #### Covered Tests Scenarios  ####
 
@@ -107,22 +105,22 @@ ChaosMonkey framework is being used for cluster disruptions.
 | Longevity               | 7 days       | n_db_nodes: 6 - i2.4xlarge\n  n_loaders: 1 - c3.large\n | write\n 1 keyspace\n cl=QUORUM\n replication_factor=3\n mode cql3 native\n rate threads=1000\n pop seq=1..10000000\n |Type: ChaosMonkey\n Monkeys: All\n Interval: 5 mins\n | aws-longevity.yaml        |
 | Longevity-1TB           | 7 days       | n_db_nodes: 4 - i2.4xlarge\n  n_loaders: 1 - c3.large\n | write\n 1 keyspace\n cl=QUORUM\n replication_factor=3\n mode cql3 native\n rate threads=20\n col 'size=FIXED(1000) n=FIXED(1)'\n -pop seq=1..1250000000\n |Type: ChaosMonkey\n Monkeys: All\n Interval: 15 mins\n | aws-longevity-1TB.yaml   |
 
-&nbsp;
-&nbsp;
+
+
   
 #### Uncovered Tests Scenarios - to be added:  ####
 - Two or more nemesis at the same time.
 - Multi DC scenarios
 - More nemesis
 
-&nbsp;&nbsp;
+
 
 - - -
 Performance {#label_Performance}
 ---------------------------------
 - - -
 
-#### &nbsp;&nbsp; Throughput ####
+####  Throughput ####
 * Single Schema
     - Write-only workload <span style="color:green">(COVERED)</span>
     - Read-only workload <span style="color:green">(COVERED)</span>
@@ -137,13 +135,13 @@ Performance {#label_Performance}
 
 \n
 
-#### &nbsp;&nbsp; Latency ####
+####  Latency ####
 * Latency (c-s) under certain loads (25% CPU, 50% …, )
 * Performance of ops (latency) and their affect on the system under certain loads
 
 \n
 
-#### &nbsp;&nbsp;**Customers Workloads** ####
+#### **Customers Workloads** ####
 * OutBrain
     - features
     - Users

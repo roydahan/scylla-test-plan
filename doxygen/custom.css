@@ -4,7 +4,7 @@ h2 {
     margin-right: 0px;
     margin-left: 5px;
     color: darkolivegreen;
-    padding-top:0px;
+    padding-top:10px;
     padding-bottom:0px;
 }
 
@@ -15,7 +15,7 @@ h3 {
     margin-right: 0px;
     margin-left: 10px;
     color: darkolivegreen;
-    padding-top:0px;
+    padding-top:10px;
     padding-bottom:0px;
 }
 
@@ -24,9 +24,9 @@ h4 {
     margin-top: 0px;
     margin-bottom: 5px;
     margin-right: 0px;
-    margin-left: 20px;
+    margin-left: 15px;
     color: darkolivegreen;
-    padding-top:0px;
+    padding-top:10px;
     padding-bottom:0px;
 }
 
@@ -35,7 +35,7 @@ p {
     margin-top: 0px;
     margin-bottom: 5px;
     margin-right: 0px;
-    margin-left: 0px;
+    margin-left: 20px;
     color: black;
     padding-top:0px;
     padding-bottom:0px;
@@ -46,7 +46,7 @@ li {
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 0px;
-    margin-left: 5px;
+    margin-left: 0px;
     color: black;
     padding-top:0px;
     padding-bottom:0px;
@@ -57,7 +57,7 @@ ul {
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 0px;
-    margin-left: 10px;
+    margin-left: 5px;
     color: black;
     padding-top:0px;
     padding-bottom:0px;
@@ -70,13 +70,6 @@ table {
     margin-left: 40px;
     color: darkslategray;
     padding-top:0px;
-    padding-bottom:0px;
+    padding-bottom:50px;
 }
 
-div {
-    margin: 0px 0px 0px 80px;
-}
-
-summary {
-    text-indent: 45px;
-}
