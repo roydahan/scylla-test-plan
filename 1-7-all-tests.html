@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list of tests in scylla-dtest</title>
+</head>
+<body>
+<style>
+    div {
+        margin: 0px 0px 0px 70px;
+        background-color: transparent;
+    }
+
+    p {
+        text-indent: 30px;
+    }
+
+    summary {
+        text-indent: 30px;
+    }
+</style>
+<p><font color="#00008b">excluded decorators: ['skip', "since('3.0')"]</font></p>
+<details>
+    <summary>auth_test.TestAuth <font color="blue">23 tests</font></summary>
+    <div> alter_ks_auth_test</div>
+    <div> altering_nonexistent_user_throws_exception_test</div>
+    <div> cant_create_existing_user_test</div>
+    <div> conditional_create_drop_user_test</div>
+    <div> create_cf_auth_test</div>
+    <div> create_ks_auth_test</div>
+    <div> drop_cf_auth_test</div>
+    <div> drop_ks_auth_test</div>
+    <div> dropping_nonexistent_user_throws_exception_test</div>
+    <div> grant_revoke_auth_test</div>
+    <div> grant_revoke_cleanup_test</div>
+    <div> grant_revoke_validation_test</div>
+    <div> list_permissions_test</div>
+    <div> list_users_test</div>
+    <div> login_test</div>
+    <div> modify_and_select_auth_test</div>
+    <div> only_superuser_alters_superuser_status_test</div>
+    <div> permissions_caching_test</div>
+    <div> regular_users_can_alter_their_passwords_only_test</div>
+    <div> system_auth_ks_is_alterable_test</div>
+    <div> type_auth_test</div>
+    <div> user_cant_drop_themselves_test</div>
+    <div> users_cant_alter_their_superuser_status_test</div>
+</details>
+<details>
+    <summary>backup_restore_tests.TestBackupRestore <font color="blue">8 tests</font></summary>
+    <div> clearsnapshot_options_test</div>
+    <div> failure_durring_restore_no_corrupt_data_test</div>
+    <div> failure_durring_snapshot_no_corrupt_data_test</div>
+    <div> incremental_backup_test</div>
+    <div> replay_restore_no_additional_data_test</div>
+    <div> restore_snapshot_from_cassandra_test</div>
+    <div> restore_snapshot_using_different_smp_setting_test</div>
+    <div> restore_snapshot_using_old_token_ownership_test</div>
+</details>
+<details>
+    <summary>batch_test.TestBatch <font color="blue">16 tests</font></summary>
+    <div> acknowledged_by_batchlog_not_set_when_batchlog_write_fails_test</div>
+    <div> acknowledged_by_batchlog_set_when_batchlog_write_succeeds_test</div>
+    <div> batch_uses_proper_timestamp_test</div>
+    <div> counter_batch_accepts_counter_mutations_test</div>
+    <div> counter_batch_rejects_regular_mutations_test</div>
+    <div> each_statement_in_batch_uses_proper_timestamp_test</div>
+    <div> empty_batch_throws_no_error_test ['@require(10711)']</div>
+    <div> logged_batch_accepts_regular_mutations_test</div>
+    <div> logged_batch_doesnt_throw_uae_test</div>
+    <div> logged_batch_rejects_counter_mutations_test</div>
+    <div> logged_batch_throws_uae_test</div>
+    <div> multi_table_batch_for_10554_test</div>
+    <div> only_one_timestamp_is_valid_test</div>
+    <div> replay_after_schema_change_test</div>
+    <div> unlogged_batch_accepts_regular_mutations_test</div>
+    <div> unlogged_batch_rejects_counter_mutations_test</div>
+</details>
+<details>
+    <summary>cfid_test.TestCFID <font color="blue">1 tests</font></summary>
+    <div> cfid_test</div>
+</details>
+<details>
+    <summary>clustering_key_filter_test.ClusteringKeyFilterTest <font color="blue">4 tests</font></summary>
+    <div> check_composite_2_test</div>
+    <div> check_composite_test</div>
+    <div> check_consistence_after_row_tombstone_test</div>
+    <div> check_non_composite_test</div>
+</details>
+<details>
+    <summary>commitlog_test.TestCommitLog <font color="blue">2 tests</font></summary>
+    <div> test_commitlog_replay_on_startup</div>
+    <div> test_commitlog_replay_with_alter_table</div>
+</details>
+<details>
+    <summary>compaction_additional_test.CompactionAdditionalStrategyTests_with_DateTieredCompactionStrategy <font
+            color="blue">1 tests</font></summary>
+    <div> compaction_is_started_on_boot_test</div>
+</details>
+<details>
+    <summary>compaction_additional_test.CompactionAdditionalStrategyTests_with_LeveledCompactionStrategy <font
+            color="blue">1 tests</font></summary>
+    <div> compaction_is_started_on_boot_test</div>
+</details>
+<details>
+    <summary>compaction_additional_test.CompactionAdditionalStrategyTests_with_SizeTieredCompactionStrategy <font
+            color="blue">1 tests</font></summary>
+    <div> compaction_is_started_on_boot_test</div>
+</details>
+<details>
+    <summary>compaction_additional_test.CompactionAdditionalTest <font color="blue">1 tests</font></summary>
+    <div> compaction_delete_with_smp_change_test</div>
+</details>
+<details>
+    <summary>compaction_test.TestCompaction_with_DateTieredCompactionStrategy <font color="blue">2 tests</font>
+    </summary>
+    <div> compaction_strategy_switching_test</div>
+    <div> sstable_deletion_test</div>
+</details>
+<details>
+    <summary>compaction_test.TestCompaction_with_LeveledCompactionStrategy <font color="blue">2 tests</font></summary>
+    <div> compaction_strategy_switching_test</div>
+    <div> sstable_deletion_test</div>
+</details>
+<details>
+    <summary>compaction_test.TestCompaction_with_SizeTieredCompactionStrategy <font color="blue">2 tests</font>
+    </summary>
+    <div> compaction_strategy_switching_test</div>
+    <div> sstable_deletion_test</div>
+</details>
+<details>
+    <summary>concurrent_schema_changes_test.TestConcurrentSchemaChanges <font color="blue">10 tests</font></summary>
+    <div> basic_test</div>
+    <div> changes_to_different_nodes_test</div>
+    <div> changes_while_node_down_test</div>
+    <div> changes_while_node_toggle_test</div>
+    <div> create_lots_of_alters_concurrently_test</div>
+    <div> create_lots_of_schema_churn_test</div>
+    <div> create_lots_of_schema_churn_with_node_down_test</div>
+    <div> decommission_node_test</div>
+    <div> load_test</div>
+    <div> snapshot_test</div>
+</details>
+<details>
+    <summary>consistency_test.TestAccuracy <font color="blue">4 tests</font></summary>
+    <div> test_network_topology_strategy_counters</div>
+    <div> test_network_topology_strategy_users</div>
+    <div> test_simple_strategy_counters</div>
+    <div> test_simple_strategy_users</div>
+</details>
+<details>
+    <summary>consistency_test.TestAvailability <font color="blue">2 tests</font></summary>
+    <div> test_network_topology_strategy</div>
+    <div> test_simple_strategy</div>
+</details>
+<details>
+    <summary>consistency_test.TestConsistency <font color="blue">7 tests</font></summary>
+    <div> data_query_digest_test</div>
+    <div> quorum_available_during_failure_test</div>
+    <div> readrepair_test</div>
+    <div> short_read_delete_test</div>
+    <div> short_read_quorum_delete_test</div>
+    <div> short_read_reversed_test</div>
+    <div> short_read_test</div>
+</details>
+<details>
+    <summary>consistent_bootstrap_test.TestBootstrapConsistency <font color="blue">2 tests</font></summary>
+    <div> consistent_reads_after_bootstrap_test</div>
+    <div> consistent_reads_after_move_test ['@no_vnodes()']</div>
+</details>
+<details>
+    <summary>counter_tests.TestCounters <font color="blue">5 tests</font></summary>
+    <div> counter_consistency_test</div>
+    <div> multi_counter_update_test</div>
+    <div> simple_increment_test</div>
+    <div> upgrade_test</div>
+    <div> validate_empty_column_name_test</div>
+</details>
+<details>
+    <summary>cql_additional_tests.TestCQL <font color="blue">93 tests</font></summary>
+    <div> alter_bug_test</div>
+    <div> alter_with_collections_test</div>
+    <div> batch_and_list_test</div>
+    <div> batch_test</div>
+    <div> boolean_test</div>
+    <div> bop_order_test</div>
+    <div> bug_4532_test</div>
+    <div> bug_4882_test</div>
+    <div> bug_6115_test</div>
+    <div> clustering_order_and_functions_test</div>
+    <div> collection_and_regular_test</div>
+    <div> collection_compact_test</div>
+    <div> collection_counter_test</div>
+    <div> collection_function_test</div>
+    <div> collection_serialization_with_protocol_v2_test</div>
+    <div> column_name_validation_test</div>
+    <div> compact_metadata_test</div>
+    <div> composite_partition_key_validation_test</div>
+    <div> composite_row_key_test</div>
+    <div> compression_option_validation_test</div>
+    <div> conversion_functions_test</div>
+    <div> count_test</div>
+    <div> counters_test</div>
+    <div> cql3_insert_thrift_test</div>
+    <div> create_invalid_test</div>
+    <div> date_test</div>
+    <div> delete_row_test</div>
+    <div> deletion_test</div>
+    <div> dense_cf_test</div>
+    <div> downgrade_to_compact_bug_test</div>
+    <div> drop_and_readd_collection_test</div>
+    <div> empty_blob_test</div>
+    <div> empty_in_test</div>
+    <div> exclusive_slice_test</div>
+    <div> float_with_exponent_test</div>
+    <div> function_and_reverse_type_test</div>
+    <div> function_with_null_test</div>
+    <div> identifier_test</div>
+    <div> in_clause_wide_rows_test</div>
+    <div> in_with_desc_order_test</div>
+    <div> invalid_old_property_test</div>
+    <div> invalid_string_literals_test</div>
+    <div> keyspace_creation_options_test</div>
+    <div> keyspace_test</div>
+    <div> large_clustering_in_test</div>
+    <div> limit_bugs_test ['@freshCluster()']</div>
+    <div> limit_multiget_test</div>
+    <div> limit_ranges_test ['@freshCluster()']</div>
+    <div> limit_sparse_test</div>
+    <div> list_prefetch_with_static_column_test</div>
+    <div> list_test</div>
+    <div> map_test</div>
+    <div> more_order_by_test</div>
+    <div> multi_collection_test</div>
+    <div> multi_list_set_test</div>
+    <div> multiordering_test</div>
+    <div> multiordering_validation_test</div>
+    <div> nan_infinity_test</div>
+    <div> negative_timestamp_test</div>
+    <div> noncomposite_static_cf_test</div>
+    <div> nonpure_function_collection_test</div>
+    <div> null_support_test</div>
+    <div> only_pk_test ['@freshCluster()']</div>
+    <div> order_by_multikey_test ['@freshCluster()']</div>
+    <div> order_by_test</div>
+    <div> order_by_validation_test</div>
+    <div> order_by_with_in_test</div>
+    <div> range_key_ordered_test ['@freshCluster()']</div>
+    <div> range_query_test</div>
+    <div> range_slice_test ['@freshCluster()']</div>
+    <div> range_with_deletes_test</div>
+    <div> remove_range_slice_test</div>
+    <div> reserved_keyword_test</div>
+    <div> reversed_compact_multikey_test</div>
+    <div> reversed_compact_test</div>
+    <div> reversed_comparator_test</div>
+    <div> row_existence_test</div>
+    <div> select_distinct_with_deletions_test</div>
+    <div> select_key_in_test</div>
+    <div> set_test</div>
+    <div> slicing_test</div>
+    <div> sparse_cf_test</div>
+    <div> static_cf_test</div>
+    <div> table_options_test</div>
+    <div> table_test</div>
+    <div> ticket_5230_test</div>
+    <div> timestamp_and_ttl_test</div>
+    <div> token_range_test</div>
+    <div> truncate_clean_cache_test ['@freshCluster()']</div>
+    <div> undefined_column_handling_test ['@freshCluster()']</div>
+    <div> unescaped_string_test</div>
+    <div> update_type_test</div>
+    <div> validate_counter_regular_test</div>
+</details>
+<details>
+    <summary>cql_tests.AbortedQueriesTester <font color="blue">4 tests</font></summary>
+    <div> index_query_test</div>
+    <div> local_query_test</div>
+    <div> materialized_view_test</div>
+    <div> remote_query_test</div>
+</details>
+<details>
+    <summary>cql_tests.MiscellaneousCQLTester <font color="blue">5 tests</font></summary>
+    <div> cql3_insert_thrift_test</div>
+    <div> invalid_string_literals_test</div>
+    <div> prepared_statement_invalidation_test</div>
+    <div> range_slice_test ['@freshCluster()']</div>
+    <div> rename_test</div>
+</details>
+<details>
+    <summary>cql_tests.StorageProxyCQLTester <font color="blue">6 tests</font></summary>
+    <div> batch_test</div>
+    <div> keyspace_test</div>
+    <div> statements_test</div>
+    <div> table_test</div>
+    <div> type_test</div>
+    <div> user_test</div>
+</details>
+<details>
+    <summary>cql_tracing_test.TestCqlTracing <font color="blue">3 tests</font></summary>
+    <div> tracing_shutdown_test</div>
+    <div> tracing_simple_test</div>
+    <div> tracing_startup_test</div>
+</details>
+<details>
+    <summary>internode_ssl_test.TestInternodeSSL <font color="blue">2 tests</font></summary>
+    <div> putget_with_internode_ssl_test</div>
+    <div> putget_with_internode_ssl_without_compression_test</div>
+</details>
+<details>
+    <summary>largecolumn_test.TestLargeColumn <font color="blue">1 tests</font></summary>
+    <div> large_columns_mixed_workload_stress_test</div>
+</details>
+<details>
+    <summary>limits_test.TestLimits <font color="blue">3 tests</font></summary>
+    <div> max_batch_size_test</div>
+    <div> max_cells_test</div>
+    <div> max_column_value_size_test</div>
+</details>
+<details>
+    <summary>migration_test.TestMigration <font color="blue">17 tests</font></summary>
+    <div> migrate_sstable_to_check_consistency_test</div>
+    <div> migrate_sstable_with_cell_tombstone_test</div>
+    <div> migrate_sstable_with_collection_list_test</div>
+    <div> migrate_sstable_with_collection_map_test</div>
+    <div> migrate_sstable_with_collection_set_test</div>
+    <div> migrate_sstable_with_compact_storage_test</div>
+    <div> migrate_sstable_with_expired_ttl_test</div>
+    <div> migrate_sstable_with_frozen_collection_map_test</div>
+    <div> migrate_sstable_with_lz4_compression_test</div>
+    <div> migrate_sstable_with_overlapping_tombstones_test</div>
+    <div> migrate_sstable_with_range_tombstone_test</div>
+    <div> migrate_sstable_with_row_tombstone_test</div>
+    <div> migrate_sstable_with_schema_change_test</div>
+    <div> migrate_sstable_with_static_cell_test</div>
+    <div> migrate_sstable_with_user_defined_types_test</div>
+    <div> migrate_sstable_with_wide_row_test</div>
+    <div> migrate_sstable_without_compression_test</div>
+</details>
+<details>
+    <summary>multidc_putget_test.TestMultiDCPutGet <font color="blue">2 tests</font></summary>
+    <div> putget_2dc_rf1_test</div>
+    <div> putget_2dc_rf2_test</div>
+</details>
+<details>
+    <summary>native_transport_ssl_test.NativeTransportSSL <font color="blue">2 tests</font></summary>
+    <div> connect_to_ssl_test</div>
+    <div> use_custom_port_test</div>
+</details>
+<details>
+    <summary>nodetool_additional_test.TestNodetool <font color="blue">28 tests</font></summary>
+    <div> backup_test</div>
+    <div> binary_test</div>
+    <div> cfhistograms_test</div>
+    <div> cfstats_test</div>
+    <div> concurrent_drain_test</div>
+    <div> concurrent_rebuild_test</div>
+    <div> concurrent_repair_test</div>
+    <div> decommission_test</div>
+    <div> describecluster_test</div>
+    <div> describering_test</div>
+    <div> general_compact_test</div>
+    <div> general_flush_test</div>
+    <div> general_ring_test</div>
+    <div> getendpoints_test</div>
+    <div> global_snapshot_test</div>
+    <div> gossip_control_test</div>
+    <div> gossipinfo_test</div>
+    <div> info_test</div>
+    <div> keyspace_column_family_flush_test</div>
+    <div> keyspace_flush_test</div>
+    <div> move_test ['@no_vnodes()']</div>
+    <div> netstats_test</div>
+    <div> proxyhistograms_test</div>
+    <div> snapshot_tag_keyspace_cf_test</div>
+    <div> snapshot_tag_keyspace_test</div>
+    <div> snapshot_tag_test</div>
+    <div> specific_compact_test</div>
+    <div> version_test</div>
+</details>
+<details>
+    <summary>offline_tools_test.TestOfflineTools <font color="blue">1 tests</font></summary>
+    <div> sstablelevelreset_test</div>
+</details>
+<details>
+    <summary>paging_test.TestPagingData <font color="blue">2 tests</font></summary>
+    <div> test_paging_a_single_wide_row</div>
+    <div> test_paging_across_multi_wide_rows</div>
+</details>
+<details>
+    <summary>paging_test.TestPagingDatasetChanges <font color="blue">5 tests</font></summary>
+    <div> test_cell_TTL_expiry_during_paging</div>
+    <div> test_data_change_impacting_earlier_page</div>
+    <div> test_data_change_impacting_later_page</div>
+    <div> test_node_unavailabe_during_paging</div>
+    <div> test_row_TTL_expiry_during_paging</div>
+</details>
+<details>
+    <summary>paging_test.TestPagingQueryIsolation <font color="blue">1 tests</font></summary>
+    <div> test_query_isolation</div>
+</details>
+<details>
+    <summary>paging_test.TestPagingSize <font color="blue">5 tests</font></summary>
+    <div> test_undefined_page_size_default</div>
+    <div> test_with_equal_results_to_page_size</div>
+    <div> test_with_less_results_than_page_size</div>
+    <div> test_with_more_results_than_page_size</div>
+    <div> test_with_no_results</div>
+</details>
+<details>
+    <summary>paging_test.TestPagingWithDeletions <font color="blue">6 tests</font></summary>
+    <div> test_multiple_cell_deletions</div>
+    <div> test_multiple_partition_deletions</div>
+    <div> test_single_cell_deletions</div>
+    <div> test_single_partition_deletions</div>
+    <div> test_single_row_deletions</div>
+    <div> test_ttl_deletions</div>
+</details>
+<details>
+    <summary>paging_test.TestPagingWithModifiers <font color="blue">4 tests</font></summary>
+    <div> test_with_allow_filtering</div>
+    <div> test_with_limit</div>
+    <div> test_with_order_by</div>
+    <div> test_with_order_by_reversed</div>
+</details>
+<details>
+    <summary>partitioner_tests.TestPartitioner <font color="blue">3 tests</font></summary>
+    <div> byteordered_partitioner_test</div>
+    <div> murmur3_partitioner_test</div>
+    <div> random_partitioner_test</div>
+</details>
+<details>
+    <summary>persistence_test.PersistenceTest <font color="blue">2 tests</font></summary>
+    <div> test_persist_simple</div>
+    <div> test_persist_small_columns</div>
+</details>
+<details>
+    <summary>pushed_notifications_test.TestPushedNotifications <font color="blue">2 tests</font></summary>
+    <div> move_single_node_test ['@no_vnodes()']</div>
+    <div> restart_node_test</div>
+</details>
+<details>
+    <summary>range_ghost_test.TestRangeGhosts <font color="blue">1 tests</font></summary>
+    <div> ghosts_test</div>
+</details>
+<details>
+    <summary>repair_additional_test.RepairAdditionalTest <font color="blue">24 tests</font></summary>
+    <div> repair_cell_delete_test</div>
+    <div> repair_cell_update_test</div>
+    <div> repair_disjoint_data_test</div>
+    <div> repair_during_update_test</div>
+    <div> repair_kill_1_test</div>
+    <div> repair_kill_2_test</div>
+    <div> repair_kill_3_test</div>
+    <div> repair_multiple_pr_test</div>
+    <div> repair_multiple_test</div>
+    <div> repair_option_cf_test</div>
+    <div> repair_option_dc_test</div>
+    <div> repair_option_invalid_ks_cf_test</div>
+    <div> repair_option_pr_test</div>
+    <div> repair_option_seq_test</div>
+    <div> repair_partition_delete_test</div>
+    <div> repair_row_delete_test</div>
+    <div> repair_schema_2_test</div>
+    <div> repair_schema_test</div>
+    <div> repair_ttl_update_test</div>
+    <div> repair_with_down_nodes_1_test</div>
+    <div> repair_with_down_nodes_1a_test</div>
+    <div> repair_with_down_nodes_2_test</div>
+    <div> repair_with_down_nodes_2a_test</div>
+    <div> repair_with_down_nodes_2b_test</div>
+</details>
+<details>
+    <summary>repair_test.TestRepair <font color="blue">7 tests</font></summary>
+    <div> dc_repair_test</div>
+    <div> empty_vs_gcable_parallel_repair_test</div>
+    <div> empty_vs_gcable_sequential_repair_test</div>
+    <div> local_dc_repair_test</div>
+    <div> simple_parallel_repair_test</div>
+    <div> simple_repair_order_preserving_test ['@no_vnodes() # https://issues.apache.org/jira/browse/CASSANDRA-5220']
+    </div>
+    <div> simple_sequential_repair_test</div>
+</details>
+<details>
+    <summary>repair_test.TestRepairDataSystemTable <font color="blue">2 tests</font></summary>
+    <div> repair_parent_table_test</div>
+    <div> repair_table_test</div>
+</details>
+<details>
+    <summary>replace_address_test.TestReplaceAddress <font color="blue">5 tests</font></summary>
+    <div> replace_active_node_test</div>
+    <div> replace_first_boot_test</div>
+    <div> replace_nonexistent_node_test</div>
+    <div> replace_shutdown_node_test</div>
+    <div> replace_stopped_node_test</div>
+</details>
+<details>
+    <summary>schema_management_test.SchemaManagementTest <font color="blue">2 tests</font></summary>
+    <div> test_dropping_keyspace_with_many_columns</div>
+    <div> test_prepared_statements_work_after_node_restart_after_altering_schema_without_changing_columns</div>
+</details>
+<details>
+    <summary>schema_test.TestSchema <font color="blue">3 tests</font></summary>
+    <div> drop_column_compact_test</div>
+    <div> drop_column_compaction_test</div>
+    <div> drop_column_queries_test</div>
+</details>
+<details>
+    <summary>simple_cluster_driver_test.TestSimpleCluster <font color="blue">5 tests</font></summary>
+    <div> simple_create_insert_select_test ['@freshCluster()']</div>
+    <div> simple_rf_1_consistency_level_tests ['@freshCluster()']</div>
+    <div> simple_rf_1_query_tests ['@freshCluster()']</div>
+    <div> simple_rf_3_consistency_level_tests ['@freshCluster()']</div>
+    <div> simple_rf_3_query_tests ['@freshCluster()']</div>
+</details>
+<details>
+    <summary>simple_driver_test.SimpleDriverTest_with_SMP <font color="blue">3 tests</font></summary>
+    <div> simple_composite_partition_key_create_insert_select_test</div>
+    <div> simple_compound_primary_key_create_insert_select_test</div>
+    <div> simple_create_insert_select_test</div>
+</details>
+<details>
+    <summary>simple_driver_test.SimpleDriverTest_with_Single <font color="blue">3 tests</font></summary>
+    <div> simple_composite_partition_key_create_insert_select_test</div>
+    <div> simple_compound_primary_key_create_insert_select_test</div>
+    <div> simple_create_insert_select_test</div>
+</details>
+<details>
+    <summary>snapshot_test.TestSnapshot <font color="blue">1 tests</font></summary>
+    <div> test_basic_snapshot_and_restore_with_refresh</div>
+</details>
+<details>
+    <summary>sstable_generation_loading_test.TestSSTableGenerationAndLoading <font color="blue">1 tests</font></summary>
+    <div> promoted_index_generation_with_small_partition_followed_by_a_large_partition_test</div>
+</details>
+<details>
+    <summary>sstableloader_test.TestMigration_with_2_1_x <font color="blue">16 tests</font></summary>
+    <div> migrate_sstable_to_check_consistency_test</div>
+    <div> migrate_sstable_with_cell_tombstone_test</div>
+    <div> migrate_sstable_with_collection_list_test</div>
+    <div> migrate_sstable_with_collection_map_test</div>
+    <div> migrate_sstable_with_collection_set_test</div>
+    <div> migrate_sstable_with_compact_storage_test</div>
+    <div> migrate_sstable_with_expired_ttl_test</div>
+    <div> migrate_sstable_with_frozen_collection_map_test</div>
+    <div> migrate_sstable_with_lz4_compression_test</div>
+    <div> migrate_sstable_with_overlapping_tombstones_test</div>
+    <div> migrate_sstable_with_range_tombstone_test</div>
+    <div> migrate_sstable_with_row_tombstone_test</div>
+    <div> migrate_sstable_with_static_cell_test</div>
+    <div> migrate_sstable_with_user_defined_types_test</div>
+    <div> migrate_sstable_with_wide_row_test</div>
+    <div> migrate_sstable_without_compression_test</div>
+</details>
+<details>
+    <summary>sstableloader_test.TestMigration_with_2_2_x <font color="blue">16 tests</font></summary>
+    <div> migrate_sstable_to_check_consistency_test</div>
+    <div> migrate_sstable_with_cell_tombstone_test</div>
+    <div> migrate_sstable_with_collection_list_test</div>
+    <div> migrate_sstable_with_collection_map_test</div>
+    <div> migrate_sstable_with_collection_set_test</div>
+    <div> migrate_sstable_with_compact_storage_test</div>
+    <div> migrate_sstable_with_expired_ttl_test</div>
+    <div> migrate_sstable_with_frozen_collection_map_test</div>
+    <div> migrate_sstable_with_lz4_compression_test</div>
+    <div> migrate_sstable_with_overlapping_tombstones_test</div>
+    <div> migrate_sstable_with_range_tombstone_test</div>
+    <div> migrate_sstable_with_row_tombstone_test</div>
+    <div> migrate_sstable_with_static_cell_test</div>
+    <div> migrate_sstable_with_user_defined_types_test</div>
+    <div> migrate_sstable_with_wide_row_test</div>
+    <div> migrate_sstable_without_compression_test</div>
+</details>
+<details>
+    <summary>sstableloader_test.TestMigration_with_3_0_x <font color="blue">16 tests</font></summary>
+    <div> migrate_sstable_to_check_consistency_test</div>
+    <div> migrate_sstable_with_cell_tombstone_test</div>
+    <div> migrate_sstable_with_collection_list_test</div>
+    <div> migrate_sstable_with_collection_map_test</div>
+    <div> migrate_sstable_with_collection_set_test</div>
+    <div> migrate_sstable_with_compact_storage_test</div>
+    <div> migrate_sstable_with_expired_ttl_test</div>
+    <div> migrate_sstable_with_frozen_collection_map_test</div>
+    <div> migrate_sstable_with_lz4_compression_test</div>
+    <div> migrate_sstable_with_overlapping_tombstones_test</div>
+    <div> migrate_sstable_with_range_tombstone_test</div>
+    <div> migrate_sstable_with_row_tombstone_test</div>
+    <div> migrate_sstable_with_static_cell_test</div>
+    <div> migrate_sstable_with_user_defined_types_test</div>
+    <div> migrate_sstable_with_wide_row_test</div>
+    <div> migrate_sstable_without_compression_test</div>
+</details>
+<details>
+    <summary>sstablesplit_test.TestSSTableSplit <font color="blue">2 tests</font></summary>
+    <div> single_file_split_test</div>
+    <div> split_test</div>
+</details>
+<details>
+    <summary>thrift_tests.TestCompactStorageThriftAccesses <font color="blue">1 tests</font></summary>
+    <div> test_get</div>
+</details>
+<details>
+    <summary>thrift_tests.TestMutations <font color="blue">67 tests</font></summary>
+    <div> test_bad_batch_calls</div>
+    <div> test_bad_calls</div>
+    <div> test_batch_insert</div>
+    <div> test_batch_insert_blocking</div>
+    <div> test_batch_mutate_remove_slice_standard</div>
+    <div> test_batch_mutate_remove_standard_columns</div>
+    <div> test_batch_mutate_remove_standard_row</div>
+    <div> test_batch_mutate_standard_columns</div>
+    <div> test_batch_mutate_standard_columns_blocking</div>
+    <div> test_cf_remove</div>
+    <div> test_cf_remove_column</div>
+    <div> test_column_name_lengths</div>
+    <div> test_column_not_found_quorum</div>
+    <div> test_column_validators</div>
+    <div> test_count</div>
+    <div> test_count_around_page_size</div>
+    <div> test_count_paging</div>
+    <div> test_counter_get_slice_range</div>
+    <div> test_create_then_drop_ks</div>
+    <div> test_describe</div>
+    <div> test_describe_keyspace</div>
+    <div> test_describe_partitioner</div>
+    <div> test_describe_ring</div>
+    <div> test_describe_ring_on_invalid_keyspace</div>
+    <div> test_describe_snitch</div>
+    <div> test_describe_token_map</div>
+    <div> test_empty_range</div>
+    <div> test_empty_slice</div>
+    <div> test_get_range_slice</div>
+    <div> test_get_range_slices_tokens</div>
+    <div> test_get_slice_by_names</div>
+    <div> test_get_slice_range</div>
+    <div> test_incr_decr_standard_add</div>
+    <div> test_incr_decr_standard_batch_add</div>
+    <div> test_incr_decr_standard_batch_remove</div>
+    <div> test_incr_decr_standard_muliget_slice</div>
+    <div> test_incr_decr_standard_remove</div>
+    <div> test_incr_decr_standard_slice</div>
+    <div> test_incr_standard_remove</div>
+    <div> test_insert</div>
+    <div> test_insert_blocking</div>
+    <div> test_insert_ttl</div>
+    <div> test_integer_order</div>
+    <div> test_integer_remove</div>
+    <div> test_invalid_cf_names</div>
+    <div> test_invalid_ks_names</div>
+    <div> test_invalid_strategy_class</div>
+    <div> test_long_order</div>
+    <div> test_long_remove</div>
+    <div> test_multi_count</div>
+    <div> test_multi_slice</div>
+    <div> test_multiget_slice</div>
+    <div> test_multiget_slice_with_compact_table</div>
+    <div> test_multiget_slice_with_count</div>
+    <div> test_range_collation</div>
+    <div> test_range_deletion</div>
+    <div> test_range_partial</div>
+    <div> test_range_with_remove</div>
+    <div> test_range_with_remove_cf</div>
+    <div> test_remove_expiring</div>
+    <div> test_simple_expiration</div>
+    <div> test_simple_expiration_batch_mutate</div>
+    <div> test_system_cf_recreate</div>
+    <div> test_system_column_family_operations</div>
+    <div> test_system_keyspace_operations</div>
+    <div> test_update_expiring</div>
+    <div> test_wrapped_range_slices</div>
+</details>
+<details>
+    <summary>thrift_tests.TestResultKeyOrder <font color="blue">1 tests</font></summary>
+    <div> test_get_range_slices_token_order</div>
+</details>
+<details>
+    <summary>thrift_tests.TestTruncate <font color="blue">1 tests</font></summary>
+    <div> test_truncate</div>
+</details>
+<details>
+    <summary>thrift_tests.TestWrappingRangeQueries <font color="blue">1 tests</font></summary>
+    <div> test_wrapping_ranges</div>
+</details>
+<details>
+    <summary>topology_test.TestTopology <font color="blue">5 tests</font></summary>
+    <div> crash_during_decommission_test ["#@since('3.0')"]</div>
+    <div> decommission_test ['@no_vnodes()']</div>
+    <div> decommissioned_node_cant_rejoin_test ['@no_vnodes()', "# @since('3.0')"]</div>
+    <div> move_single_node_test ['@no_vnodes()']</div>
+    <div> movement_test ['@no_vnodes()']</div>
+</details>
+<details>
+    <summary>ttl_test.TestDistributedTTL <font color="blue">3 tests</font></summary>
+    <div> ttl_is_replicated_test</div>
+    <div> ttl_is_respected_on_delayed_replication_test</div>
+    <div> ttl_is_respected_on_repair_test</div>
+</details>
+<details>
+    <summary>ttl_test.TestTTL <font color="blue">15 tests</font></summary>
+    <div> collection_list_ttl_test</div>
+    <div> collection_map_ttl_test</div>
+    <div> collection_set_ttl_test</div>
+    <div> default_ttl_can_be_removed_test</div>
+    <div> default_ttl_test</div>
+    <div> delete_with_ttl_expired_test</div>
+    <div> insert_ttl_has_priority_on_defaut_ttl_test</div>
+    <div> insert_ttl_works_without_default_ttl_test</div>
+    <div> remove_column_ttl_test</div>
+    <div> remove_column_ttl_with_default_ttl_test</div>
+    <div> removing_default_ttl_does_not_affect_existing_rows_test</div>
+    <div> update_column_ttl_with_default_ttl_test</div>
+    <div> update_column_ttl_with_default_ttl_test2</div>
+    <div> update_multiple_columns_ttl_test</div>
+    <div> update_single_column_ttl_test</div>
+</details>
+<details>
+    <summary>update_cluster_layout_tests.TestUpdateClusterLayout <font color="blue">20 tests</font></summary>
+    <div> add_node_with_large_partition1_test</div>
+    <div> add_node_with_large_partition2_test</div>
+    <div> add_node_with_large_partition3_test</div>
+    <div> simple_add_new_node_while_query_info_1_test</div>
+    <div> simple_add_new_node_while_query_info_2_test</div>
+    <div> simple_add_new_node_while_schema_changes_test</div>
+    <div> simple_add_node_1_test</div>
+    <div> simple_add_two_nodes_in_parallel_test</div>
+    <div> simple_decommission_node_1_test</div>
+    <div> simple_decommission_node_2_test</div>
+    <div> simple_decommission_node_while_adding_info_1_test</div>
+    <div> simple_decommission_node_while_adding_info_2_test</div>
+    <div> simple_decommission_node_while_query_info_1_test</div>
+    <div> simple_decommission_node_while_query_info_2_test</div>
+    <div> simple_kill_new_node_while_bootstrapping_test</div>
+    <div> simple_kill_new_node_while_bootstrapping_with_parallel_writes_in_multidc_test</div>
+    <div> simple_kill_new_node_while_bootstrapping_with_parallel_writes_test</div>
+    <div> simple_kill_node_while_decommissioning_test</div>
+    <div> simple_removenode_1_test</div>
+    <div> simple_removenode_2_test</div>
+</details>
+<details>
+    <summary>user_types_test.TestUserTypes <font color="blue">9 tests</font></summary>
+    <div> test_nested_type_dropping</div>
+    <div> test_nested_user_types</div>
+    <div> test_nulls_in_user_types</div>
+    <div> test_type_as_clustering_col</div>
+    <div> test_type_as_part_of_pkey</div>
+    <div> test_type_dropping</div>
+    <div> test_type_enforcement</div>
+    <div> test_type_keyspace_permission_isolation</div>
+    <div> test_user_type_isolation</div>
+</details>
+<details>
+    <summary>wide_rows_test.TestWideRows <font color="blue">2 tests</font></summary>
+    <div> test_column_index_stress</div>
+    <div> test_wide_rows</div>
+</details>
+</body>
+</html>
