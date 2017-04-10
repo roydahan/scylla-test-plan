@@ -1,5 +1,13 @@
+import json
+import re
+import requests
 import subprocess
 from optparse import OptionParser
+
+ISSUES_FOR_SCYLLA_URL = 'https://github.com/scylladb/scylla/issues/%s'
+ISSUES_FOR_SCYLLA_TOOLS_JAVA_URL = 'https://github.com/scylladb/scylla-tools-java/issues/%s'
+
+ISSUES_FOR_C_URL = 'https://issues.apache.org/jira/browse/CASSANDRA-%s'
 
 header_report = """<!DOCTYPE html>
     <html lang="en">
@@ -56,6 +64,10 @@ def parse_args():
     parser.add_option("-s", "--skip_decorators", dest="skip_decorators",
                       action="store_true", default=False,
                       help="don't show decorators in report")
+    parser.add_option("-b", "--track_bugs", dest="track_bugs",
+                      action="store_true", default=False,
+                      help="handle issues in decorator 'require'.\n"
+                           "The best option: -i require -b -r")
     parser.add_option("-r", "--report", dest="html_report",
                       action='callback', callback=optional_arg('all_tests.html'),
                       help="generate html report into file")
@@ -69,13 +81,13 @@ def parse_args():
                      "  python get_all_tests.py -i freshCluster,require -e skipIf -s -t -r")
     (options, args) = parser.parse_args()
     return options.skip_decorators, options.include_decorators, \
-           options.exclude_decorators, options.html_report, options.tests_file
+           options.exclude_decorators, options.html_report, options.tests_file, options.track_bugs
 
 
 def parse_nosetests_output(lines):
     tests = {}
     for l in lines:
-        if "..." in l and "Failure: NameError (name 'skip' is not defined)" not in l:
+        if "..." in l and 'Failure:' not in l:
             spl = l.split()
             test_name = spl[0]
             class_path = spl[1][1:-1]
@@ -128,7 +140,7 @@ def exists_in_tests_file(including_tests, p, t):
 
 
 def main():
-    skip_decorators, include_decorators, exclude_decorators, report_file, tests_file = parse_args()
+    skip_decorators, include_decorators, exclude_decorators, report_file, tests_file, track_bugs = parse_args()
     track_tests = {}
     if tests_file:
         track_tests = parse_test_file(tests_file)
@@ -171,6 +183,10 @@ def main():
                 # read module with class
                 with open(module_name.replace('.', '/') + ".py") as fr:
                     module_src = fr.readlines()
+                if module_name == 'sstabledump_test':
+                    # for sstabledump_test all tests locates in cqlsh_copy_test.py
+                    with open('cqlsh_tests/cqlsh_copy_tests.py') as fr:
+                        module_src.extend(fr.readlines())
                 if module_name == 'sstableloader_test':
                     # for sstableloader_test all tests locates in migration_test.py
                     with open('migration_test.py') as fr:
@@ -200,6 +216,62 @@ def main():
                         for excl in exclude_decorators:
                             if decorator.split("(")[0] in "@" + excl:
                                 show = False
+                if decorators and show and not skip_decorators:
+                    prefix = "   %s      %s" % (t, decorators)
+                    if track_bugs and 'require' in decorator:
+                        issue_id = re.findall(r'\d+', decorator)
+                        if not len(issue_id):
+                            to_print.append('%s <a>unable to parse decorator</a>' % prefix)
+                        else:
+                            issue_id = issue_id[0]
+                            if 'scylla-tools-java' in decorator:
+                                issue_url = ISSUES_FOR_SCYLLA_TOOLS_JAVA_URL % issue_id
+                            else:
+                                issue_url = ISSUES_FOR_SCYLLA_URL % issue_id
+                            r = requests.get(issue_url)
+                            if r.status_code in [404, 403]:
+                                issue_url = ISSUES_FOR_C_URL % issue_id
+                                r = requests.get(issue_url)
+                                found = False
+                                for line in r.content.split('\n'):
+                                    if 'jira-issue-status' in line:
+                                        if '>Resolved<' in line:
+                                            to_print.append('%s <a href="%s"><font color="FF5500"> C* Resolved</font></a>' % (prefix, issue_url))
+                                            found = True
+                                            break
+                                        elif '>Closed<' in line:
+                                            to_print.append('%s <a href="%s"><font color="FF5500"> C* Closed</font></a>' % (prefix, issue_url))
+                                            found = True
+                                            break
+                                        elif '>Patch Available<' in line:
+                                            to_print.append('%s <a href="%s"><font color="ADFF2F"> C* Patch Available</font></a>' % (prefix, issue_url))
+                                            found = True
+                                            break
+                                        elif '>IN PROGRESS<' in line:
+                                            to_print.append('%s <a href="%s"><font color="808000"> C* IN PROGRESS</font></a>' % (prefix, issue_url))
+                                            found = True
+                                            break
+                                        elif '>OPEN<' in line:
+                                            to_print.append('%s <a href="%s"><font color="FFFACD"> C* OPEN</font></a>' % (prefix, issue_url))
+                                            found = True
+                                            break
+                                        else:
+                                            to_print.append('not able to define status')
+                                if not found:
+                                    to_print.append('not found %s' % decorator)
+                            else:
+                                found = False
+                                for line in r.content.split('\n'):
+                                    if 'state state-closed' in line:
+                                        found = True
+                                        to_print.append('%s<a href="%s"><font color="FF00CC"> Scylla closed</font></a>' % (prefix, issue_url))
+                                        break
+                                    if 'state state-open' in line:
+                                        found = True
+                                        to_print.append('%s<a href="%s"><font color="008000"> Scylla open</font></a>' % (prefix, issue_url))
+                                        break
+                                if not found:
+                                    to_print.append("Status not found for  %s" % (issue_url))
                 if decorators and show and not skip_decorators:
                     to_print.append("   %s      %s" % (t, decorators))
                 elif show:
